@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((10#$HEXADECIMAL)) $DECIMAL
+echo $((10#$HEXADECIMAL))
