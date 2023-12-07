@@ -7,7 +7,7 @@ This directory contains screenshots demonstrating completed levels in [The CMD C
 > **Note:** The levels completed are identified by counting the emojis above the question panel:
 >![Completed levels:](completed_levels.png)
 
-## Setting up the SFTP Tool
+### Setting up the SFTP Tool
 
 To set up the SFTP tool, I followed these steps:
 
@@ -25,7 +25,9 @@ To set up the SFTP tool, I followed these steps:
    ![Used put](puts.png)
 
 
-# Bellow are answers to the tasks:
+
+
+## Bellow are answers to the tasks:
 
 ### 0-first_9_tasks.png
 ![0-first_9_tasks](0-first_9_tasks.png)
