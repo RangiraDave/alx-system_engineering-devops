@@ -5,7 +5,7 @@
 This directory contains screenshots demonstrating completed levels in [The CMD CHALLENGE](https://intranet.alxswe.com/rltoken/a83_NOBEtXgFr1Yqej0HYA).
 
 > **Note:** The levels completed are identified by counting the emojis above the question panel.
-> Screenshots: ![Completed levels:](completed_levels.png)
+>![Completed levels:](completed_levels.png)
 
 ## Setting up the SFTP Tool
 
