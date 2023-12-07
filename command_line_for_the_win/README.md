@@ -4,7 +4,7 @@
 
 This directory contains screenshots demonstrating completed levels in [The CMD CHALLENGE](https://intranet.alxswe.com/rltoken/a83_NOBEtXgFr1Yqej0HYA).
 
-> **Note:** The levels completed are identified by counting the emojis above the question panel.
+> **Note:** The levels completed are identified by counting the emojis above the question panel:
 >![Completed levels:](completed_levels.png)
 
 ## Setting up the SFTP Tool
@@ -24,5 +24,4 @@ To set up the SFTP tool, I followed these steps:
 - Uploaded all screenshots to the remote using `put *`:
    ![Used put](puts.png)
 
-Now the README provides a clearer and more structured guide to your CMD CHALLENGE and the steps you took to set up the SFTP tool. Feel free to adjust it further based on your preferences!
 
