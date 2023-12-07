@@ -25,3 +25,16 @@ To set up the SFTP tool, I followed these steps:
    ![Used put](puts.png)
 
 
+# Bellow are answers to the tasks:
+
+### 0-first_9_tasks.png
+![0-first_9_tasks](0-first_9_tasks.png)
+
+### 1-next_9_tasks.png
+![1-next_9_tasks](1-next_9_tasks.png)
+
+### 2-next_9_tasks.png
+![2-next_9_tasks](2-next_9_tasks.png)
+
+
+##### end
