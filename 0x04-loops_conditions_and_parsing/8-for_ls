@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script to display a list of contents in the current directory
+# starting after - sign on each name.
+
+list=$(ls | grep '.*-.*' | sed 's/.*-\(.*\)/\1/')
+for i in $list;
+do
+    echo "$i"
+done
