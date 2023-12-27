@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# Script to show only bash PIDs
-ps -au | grep "bash"
