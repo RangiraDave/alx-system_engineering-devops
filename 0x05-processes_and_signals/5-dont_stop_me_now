@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script to kill a process in another terminal window.
+kill $(pgrep 'bash')
