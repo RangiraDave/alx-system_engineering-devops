@@ -9,8 +9,6 @@ input = ARGV[0]
 pattern = /hbt{2,5}n/
 matches = input.scan(pattern)
 
-if matches.empty?
-  puts "No matches found."
-else
+if matches
   puts matches.join('')
 end
