@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script to listen on port 98
+
+if [ "$EUID" -ne 0 ]; then
+	echo "You must be root."
+	exit 1
+fi
+
+nc -l -p 98

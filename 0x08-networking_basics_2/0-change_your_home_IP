@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 # Script to change IP via /etc/hosts
+
+if [ "$UEID" -ne 0 ]; then
+	echo "You must have root priviiirege"
+	exit 1
+fi
+
 localhost=172.0.0.2
 facebook=8.8.8.8
 
