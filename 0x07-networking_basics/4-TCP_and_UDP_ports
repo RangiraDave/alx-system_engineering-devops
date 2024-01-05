@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# Script to display listening ports.
 netstat -tulp
