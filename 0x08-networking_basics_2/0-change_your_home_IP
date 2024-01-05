@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script to change IP via /etc/hosts
+localhost=172.0.0.2
+facebook=8.8.8.8
+
+sed -i "/^127\.0\.0\.1[[:space:]]localhost/ s/^127\.0\.0\.1[[:space:]]localhost/$localhost	localhost/" /etc/hosts
+
+# echo "$localhost localhost">> /etc/hosts
+echo "$facebook	facebook.com">> /etc/hosts
