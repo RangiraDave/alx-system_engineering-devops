@@ -1,7 +1,5 @@
 # Script to create a file
-
-file {'File creation':
-path       => '/tmp/school',
+file {'/tmp/school':
 insure     => present,
 permission => 0744,
 owner      => www-data,
