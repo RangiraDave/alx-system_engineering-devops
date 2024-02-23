@@ -1,7 +1,7 @@
 # Manifest to kill a process
 
 exec {'Process killer':
+path        => '/usr/bin/',
 command     => 'pkill killmenow',
-cwd         => '.',
-refreshonly => true,
+refreshonly => true
 }
