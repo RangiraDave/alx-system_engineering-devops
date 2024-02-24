@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Script to creat rsa key of 4096 size
 
-ssh-keygen -b 4096 -f school -N ''
+ssh-keygen -t rsa -b 4096 -f school -N 'betty'
