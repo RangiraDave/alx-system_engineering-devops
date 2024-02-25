@@ -1,13 +1,19 @@
 # This Directory contains commands to connect and use the remote server.
 
 ## Objectives:
+```
 What is a server
-Where servers usually live
-What is SSH
-How to create an SSH RSA key pair
-How to connect to a remote host using an SSH RSA key pair
-The advantage of using #!/usr/bin/env bash instead of /bin/bash
 
+Where servers usually live
+
+What is SSH
+
+How to create an SSH RSA key pair
+
+How to connect to a remote host using an SSH RSA key pair
+
+The advantage of using #!/usr/bin/env bash instead of /bin/bash
+```
 
 
 0. Use a private key
