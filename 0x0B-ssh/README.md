@@ -3,20 +3,15 @@
 ## Objectives:
 ```
 What is a server
-
 Where servers usually live
-
 What is SSH
-
 How to create an SSH RSA key pair
-
 How to connect to a remote host using an SSH RSA key pair
-
 The advantage of using #!/usr/bin/env bash instead of /bin/bash
 ```
 
 
-0. Use a private key
+- 0. Use a private key
 Write a Bash script that uses ssh to connect to your server using the private key ~/.ssh/school with the user ubuntu.
 
 Requirements:
