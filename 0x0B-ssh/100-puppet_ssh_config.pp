@@ -3,8 +3,7 @@
 $str = "
 PermitRootLogin no
 PasswordAuthentication no
-Include /etc/ssh/sshd_config.d/*.conf
-AcceptEnv LANG LC_*
+HostKey ~/.ssh/school
 "
 
 file {'/etc/ssh/sshd_config':
