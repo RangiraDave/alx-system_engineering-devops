@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # Script to configure a server to install nginx web_server
 
-apt-get -y upgrade
-apt-get -y update
-apt-get -y install nginx
+sudo apt-get -y upgrade
+sudo apt-get -y update
+sudo apt-get -y install nginx
 
 #echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 
-service start nginx
+#service start nginx
 
-echo 'server {
+sudo echo 'server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
@@ -21,4 +21,4 @@ echo 'server {
     }
 }' > /etc/nginx/sites-available/default
 
-# service nginx restart
+sudo service nginx restart
