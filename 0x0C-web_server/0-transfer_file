@@ -14,4 +14,4 @@ PATH_TO_SSH_KEY="$4"
 
 export SCP_OPTS="-o StrictHostKeyChecking=no"
 
-scp -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" $SCP_OPTS "$USERNAME@$IP:~/"
+scp -i "$PATH_TO_SSH_KEY" $SCP_OPTS "$PATH_TO_FILE" "$USERNAME@$IP:~/"
