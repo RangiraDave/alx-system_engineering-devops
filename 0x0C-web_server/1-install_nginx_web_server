@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Script to configure a server to install nginx web_server
 
+apt-get -y upgrade
 apt-get -y update
 apt-get -y install nginx
 
