@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 # Script to send a file from client to the server
 
-if [ "$#" -lt 5 ]; then
+if [ "$#" -lt 4 ]; then
 	echo "Usage: $0 PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 	exit 1
 fi
 
-PATH_TO_FILE=$1
-IP=$2
-USERNAME=$3
-PATH_TO_SSH_KEY=$4
+PATH_TO_FILE="$1"
+IP="$2"
+USERNAME="$3"
+PATH_TO_SSH_KEY="$4"
 
-scp -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$USERNAME@$IP:~"
+export SCP_OPTS="-o StrictHostKeyChecking=no"
+
+scp -i "$PATH_TO_SSH_KEY" $SCP_OPTS "$PATH_TO_FILE" "$USERNAME@$IP:~/"
