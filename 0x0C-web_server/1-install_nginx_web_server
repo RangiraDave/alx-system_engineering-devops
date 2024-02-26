@@ -7,6 +7,8 @@ apt-get -y install nginx
 
 #echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 
+service start nginx
+
 echo 'server {
     listen 80 default_server;
     listen [::]:80 default_server;
