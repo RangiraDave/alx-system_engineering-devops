@@ -11,9 +11,18 @@ sudo rm /var/www/html/index.nginx-debian.html
 echo "
 sever {
 	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
 	location / {
 		return 200 'Hello World!';
 	}
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	sever_name_;
 }" > /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
