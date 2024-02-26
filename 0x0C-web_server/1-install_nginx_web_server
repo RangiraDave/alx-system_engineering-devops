@@ -6,7 +6,7 @@ sudo apt-get -y install nginx
 
 # sudo rm /etc/nginx/sites-enabled/default
 
-sudo rm /var/www/html/index.nginx-debian.html
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
 cat << EOL > /etc/nginx/sites-enabled/default
 sever {
