@@ -6,7 +6,7 @@ apt-get -y install nginx
 
 echo 'Hello World!' > /var/www/html/index.html
 
-cat << EOL > /etc/nginx/sites-available/default
+echo "
 server {
     listen 80 default_server;
     #listen [::]:80 default_server;
@@ -17,6 +17,6 @@ server {
     location = / {
         return 200 "Hello World!";
     }
-}
-EOL
+}" > /etc/nginx/sites-available/default
+
 service nginx restart
