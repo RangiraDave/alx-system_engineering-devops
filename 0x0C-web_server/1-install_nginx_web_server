@@ -9,7 +9,7 @@ sudo apt-get -y install nginx
 #echo "Hello World!" > /var/www/html/index
 
 cat << EOL > /etc/nginx/sites-available/default
-sever {
+server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 
@@ -23,7 +23,7 @@ sever {
 		try_files $uri $uri/ =404;
 	}
 
-	sever_name_;
+	server_name_;
 }"
 EOL
 sudo service nginx restart
