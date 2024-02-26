@@ -6,7 +6,7 @@ sudo apt-get -y install nginx
 
 # sudo rm /etc/nginx/sites-enabled/default
 
-#echo "Hello World!" > /var/www/html/index
+echo "Hello World!" > /var/www/html/index
 
 cat << EOL > /etc/nginx/sites-available/default
 server {
