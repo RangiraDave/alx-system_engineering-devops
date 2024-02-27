@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Script to configure the nginx server to have a custom page with 404 error
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+
+sudo tee /usr/share/nginx/html/404.html > /dev/null <<EOF
+Ceci n'est pas une page
+EOF
+
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
+server {
+	listen 80 default_server;
+
+	root /usr/share/nginx/html;
+	index index.html index.htm index.nginx-debian.html;
+
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+
+	error_page 404 /404.html;
+	location = /404.html {
+		root /usr/share/nginx/html;
+		internal;
+	}
+}
+EOF
+
+sudo service nginx restart
