@@ -1,15 +1,16 @@
 #!/usr/bin/env bash
 # Script to configure an nginx server to redirect to another page
 
-sudo apt-get -y upgrade
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
 
 #echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 
 #service start nginx
 
-sudo echo 'server {
+sudo tee /etc/nginx/sites-available/default > /dev/null <<EOF
+server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
@@ -19,8 +20,9 @@ sudo echo 'server {
     location = / {
         return 200 "Hello World!";
     }
-}' > /etc/nginx/sites-available/default
 
-sudo sed -i '/listen \[::\]:80 default_server;/a rewrite ^/redirect_me/(.*)$ https://www.youtube.com/watch?v=lE-qjOzwk3s permanent;' /etc/nginx/sites-available/default
+    rewrite ^/redirect_me/(.*)$ https://www.youtube.com/watch?v=lE-qjOzwk3s permanent;
+}
+EOF
 
 sudo service nginx restart
