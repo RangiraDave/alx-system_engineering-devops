@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Script to configure a server to install nginx web_server
 
-sudo apt-get -y install nginx
+apt-get update
+apt-get -y install nginx
 
 echo 'Hello World!' > /var/www/html/index.html
 
 # service start nginx
 
 # ufw allow 'Nginx HTTP'
-sudo service nginx restart
+service nginx start
