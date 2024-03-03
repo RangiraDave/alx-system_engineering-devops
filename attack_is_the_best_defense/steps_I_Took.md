@@ -14,6 +14,6 @@
 - Installed Docker: ```sudo snap install docker```
 - Installed hydra: ```sudo apt install hydra```
 - Ran the docker image: ```sudo docker run -p 2222:22 -d -ti sylvainkalache/264-1```
-> Corrected dictionaries from github
-> Used ```grep -l '(\w{11})' <mix-number-words file> > 11-common_pass.txt```
-> Then used hydra command ```sudo hydra -l sylvain -P 11-10k_common.txt 127.0.0.1 ssh```
+- Corrected dictionaries from github
+- Used ```grep -l '(\w{11})' <mix-number-words file> > 11-common_pass.txt```
+- Then used hydra command ```sudo hydra -l sylvain -P 11-10k_common.txt 127.0.0.1 ssh```
