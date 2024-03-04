@@ -10,7 +10,7 @@ ufw allow "Nginx HTTP"
 add_on=24
 AVALLABLE_D="/etc/nginx/sites_availlable/default"
 ENABLED_D="/etc/nginx/sites_enabled/default"
-add="\tadd_header $hostname"
+add="\tadd_header X-Served-By $hostname"
 sed -i "${add_on}s~.*~${add}~" $AVAILLABLE_D
 sed -i "${add_on}s~.*~${add}~" $ENABLED_D
 
