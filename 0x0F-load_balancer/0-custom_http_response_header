@@ -5,6 +5,8 @@ apt-get -y update
 apt-get -y upgrade
 apt-get -y install nginx
 
+ufw allow "Nginx HTTP"
+
 add_on=24
 AVALLABLE_D="/etc/nginx/sites_availlable/default"
 ENABLED_D="/etc/nginx/sites_enabled/default"
