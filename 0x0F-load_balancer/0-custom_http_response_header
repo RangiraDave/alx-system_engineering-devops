@@ -3,56 +3,13 @@
 
 apt-get -y update
 apt-get -y upgrade
+apt-get -y install nginx
 
-echo "
-# Manifest to install nginx and configure it to handle
-# redirection with 301 permanently
+add_on=24
+AVALLABLE_D="/etc/nginx/sites_availlable/default"
+ENABLED_D="/etc/nginx/sites_enabled/default"
+add="\tadd_header $hostname"
+sed -i "${add_on}s~.*~${add}~" $AVAILLABLE_D
+sed -i "${add_on}s~.*~${add}~" $ENABLED_D
 
-# install nginx package
-package { 'nginx':
- ensure => installed,
-}
-
-# Define the custom index page content
-file { '/var/www/html/index.nginx-debian.html':
- ensure  => present,
- content => 'Hello World!\n',
-}
-
-# Configure Nginx server block
-file { '/etc/nginx/sites-available/default':
-ensure  => present,
-content => '
- server {
-  listen 80 default_server;
-  listen [::]:80 default_server;
-
-  add_header X-Served-By $hostname;
-
-  root /var/www/html;
-  index index.html index.htm index.nginx-debian.html;
-
-  location / {
-   return 200 'Hello World!';
-  }
-
-  # 301 Redirect /redirect_me
-  location /redirect_me {
-   return 301 https://www.youtube.com/watch?v=lE-qjOzwk3s;
-  }
- }',
-
- require => Package['nginx'],
- notify  => Service['nginx'],
-}
-
-# Ensure Nginx service is running and enabled
-service { 'nginx':
- ensure => running,
- enable => true,
-}
-" > 7-puppet_install_nginx_web_server.pp
-
-chmod +x 7-puppet_install_nginx_web_sever.pp
-
-puppet apply 7-puppet_install_nginx_web_server.pp
+service nginx start
