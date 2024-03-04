@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Scripr to configure web_02 to be exact as web_02.
+
+apt-get -y update
+apt-get -y upgrade
+
 echo "
 # Manifest to install nginx and configure it to handle
 # redirection with 301 permanently
@@ -17,10 +22,12 @@ file { '/var/www/html/index.nginx-debian.html':
 # Configure Nginx server block
 file { '/etc/nginx/sites-available/default':
 ensure  => present,
-content => "
+content => '
  server {
   listen 80 default_server;
   listen [::]:80 default_server;
+
+  add_header X-Served-By $hostname
 
   root /var/www/html;
   index index.html index.htm index.nginx-debian.html;
@@ -33,7 +40,7 @@ content => "
   location /redirect_me {
    return 301 https://www.youtube.com/watch?v=lE-qjOzwk3s;
   }
- }",
+ }',
 
  require => Package['nginx'],
  notify  => Service['nginx'],
