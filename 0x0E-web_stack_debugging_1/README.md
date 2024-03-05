@@ -1,4 +1,6 @@
 # This directory contains debugging challeng number 2 tasks
+
+
 ## Learning resourses:
 - [What is a protocol](https://www.techtarget.com/searchnetworking/definition/protocol)
 - [What is an IP address](https://computer.howstuffworks.com/internet/basics/what-is-an-ip-address.htm)
@@ -7,8 +9,9 @@
 
 
 ## Learning objectives:
-- Must the skills of server debugging.
-
+```
+Must the skills of server debugging.
+```
 
 0. Nginx likes port 80
 Using your debugging skills, find out what’s keeping your Ubuntu container’s Nginx installation from listening on port 80. Feel free to install whatever tool you need, start and destroy as many containers as you need to debug the issue. Then, write a Bash script with the minimum number of commands to automate your fix.
