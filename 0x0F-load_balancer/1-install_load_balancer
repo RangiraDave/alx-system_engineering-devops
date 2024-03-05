@@ -6,13 +6,13 @@ apt-get -y install haproxy
 
 sudo tee /etc/haproxy/haproxy.cfg > /dev/null <<EOF
 backend web-backend
-   default_backend server_backend
+   bind 0:80
+      default_backend server_backend
 
-backend blog-backend
+backend server-backend
    balance roundrobin
-   mode http
    server 306152-web-01 18.235.255.111 check
    server 306152-web-02 18.204.14.87 check
 EOF
 
-service haproxy restart
+service haproxy start
