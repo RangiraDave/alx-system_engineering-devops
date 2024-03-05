@@ -9,7 +9,7 @@
 
 
 ## Background Context:
-``
+```
 You have been given 2 additional servers:
 
 - gc-[STUDENT_ID]-web-02-XXXXXXXXXX
@@ -19,7 +19,7 @@ Let’s improve our web stack so that there is redundancy for our web servers. T
 For this project, you will need to write Bash scripts to automate your work. All scripts must be designed to configure a brand new Ubuntu server to match the task requirements.
 
 
-``
+```
 ## My Servers:
   Name	       Username	     IP		  State
 306152-web-01	ubuntu	18.235.255.111 	 running
