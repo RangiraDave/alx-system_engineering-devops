@@ -8,9 +8,11 @@ apt-get -y install nginx
 ufw allow "Nginx HTTP"
 
 add_on=24
+header="\tadd_header X-Served-By $hostname;"
 AVAILABLE_D="/etc/nginx/sites-available/default"
 ENABLED_D="/etc/nginx/sites-enabled/default"
-header="\tadd_header X-Served-By $hostname;"
+# header="\tadd_header X-Served-By $hostname;"
+
 sed -i "${add_on}s~.*~${header}~" $AVAILABLE_D
 sed -i "${add_on}s~.*~${header}~" $ENABLED_D
 
