@@ -16,7 +16,6 @@ text2='\tbind *:80\n\tdefault_backend MegaBackend'
 
 sed -i "${line2}s~.*~${text2}~" $file
 #echo '' >> /etc/haproxy/haproxy.cfg
-echo '' >> /etc/haproxy/haproxy.cfg
 
 line3=40
 text3='backend MegaBackend\n\tbalance roundrobin\n'
