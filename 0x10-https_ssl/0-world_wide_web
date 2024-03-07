@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Bash script that axepts two arguments 'domain' and 'subdomain'
+# and desplays information about them.
+
+#  Function to display the info
+display_info() {
+	domain="$1"
+	subdomain="$2"
+	result=$(dig +short "$subdomain.$domain" | tail -1)
+
+	if [ -n "$result" ]; then
+		record_type=$(dig +short "$subdomain.$domain" | head -1 | awk '{print $2}')
+		echo "The subdomain $subdomain is a $record_type record and points to $result"
+	else
+		echo "No record found for $subdomain"
+	fi
+}
+
+# main function
+main() {
+	domain=$1
+	subdomain="$2"
+	if [ -z "$subdomain" ]; then
+		subdomain=("www" "ld-01" "web-01" "web-02")
+		for sub in "${subdomain[@]}"; do
+			display_info "$domain" "$subdomain"
+		done
+	else
+		display_info "$domain" "$subdomain"
+	fi
+}
+
+# checking whether the parameters are providesd
+if [ "$#" -eq 0 ]; then
+	echo "Usage: $0 domain [subdomain]"
+	exit 1
+fi
+
+main "$@"
