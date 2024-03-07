@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to automate nginx to listen to port 80 made short.
+sudo apt-get -y update
+sudo apt-get -y install nginx
