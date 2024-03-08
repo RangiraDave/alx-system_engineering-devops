@@ -9,7 +9,7 @@ display_info() {
 	result=$(dig +short "$subdomain.$domain" | tail -1)
 
 	if [ -n "$result" ]; then
-		record_type=$(dig +short "$subdomain.$domain" | head -1 | awk '{print $2}')
+		record_type=$(dig +short "$subdomain.$domain" | head -l | awk '{print $2}')
 		echo "The subdomain $subdomain is a $record_type record and points to $result"
 	else
 		echo "No record found for $subdomain"
