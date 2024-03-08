@@ -24,12 +24,12 @@ text3='backend MegaBackend\n\tbalance roundrobin\n'
 sed -i "${line3}s~.*~${text3}~" $file
 
 line4=42
-text4='\tserver 174606-web-01 18.204.9.96:80 check\n'
+text4='\tserver  306152-web-01 18.235.255.111:80 check\n'
 
 sed -i "${line4}s~.*~${text4}~" $file
 
 line5=43
-text5='\tserver 174606-web-02 54.144.144.63:80 check'
+text5='\tserver 306152-web-02 18.204.14.87:80 check'
 
 sed -i "${line5}s~.*~${text5}~" $file
 
