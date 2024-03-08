@@ -23,7 +23,7 @@ main() {
 	if [ -z "$subdomain" ]; then
 		subdomain=("www" "ld-01" "web-01" "web-02")
 		for sub in "${subdomain[@]}"; do
-			display_info "$domain" "$subdomain"
+			display_info "$domain" "$sub"
 		done
 	else
 		display_info "$domain" "$subdomain"
