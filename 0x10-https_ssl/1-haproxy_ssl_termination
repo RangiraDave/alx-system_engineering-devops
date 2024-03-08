@@ -34,7 +34,7 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 
 frontend mega
-	bind *:443 ssl crt /etc/letsencrypt/archive/www.rangira.tech
+	bind *:443 ssl crt /etc/letsencrypt/live/www.rangira.tech/fullchain.pem
 	reqadd X-Forwarded-Proto:\ https
 	default_backend MegaBackend
 
