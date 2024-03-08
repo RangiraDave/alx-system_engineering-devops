@@ -37,10 +37,10 @@ frontend http-in
 	bind *:80
 	redirect scheme https code 301 if !{ ssl_fc }
 
-frontend https-in
+frontend Mega
 	bind *:443 ssl crt /etc/letsencrypt/live/www.rangira.tech
-	reqadd X-Forwarded-Proto:\ https
-	default_backend servers
+	# reqadd X-Forwarded-Proto:\ https
+	default_backend MegaBackend
 
 backend servers
 	server web-01 18.235.255.111:80
