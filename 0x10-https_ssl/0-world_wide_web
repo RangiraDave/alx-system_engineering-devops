@@ -9,8 +9,8 @@ display_info() {
 	result=$(dig +short "$subdomain.$domain" | tail -1)
 
 	if [ -n "$result" ]; then
-		record_type=$(dig +short "$subdomain.$domain" | head -1 | awk '{print $2}')
-		echo "The subdomain  is a A record and points to $result"
+		record_type=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION' | tail -1 | awk '{print $4}')
+		echo "The subdomain $subdomain is a $record_type record and points to $result"
 	else
 		echo "No record found for $subdomain"
 	fi
@@ -21,8 +21,8 @@ main() {
 	domain=$1
 	subdomain="$2"
 	if [ -z "$subdomain" ]; then
-		subdomain=("www" "ld-01" "web-01" "web-02")
-		for sub in "${subdomain[@]}"; do
+		subdomai=("www" "lb-01" "web-01" "web-02")
+		for sub in "${subdomai[@]}"; do
 			display_info "$domain" "$sub"
 		done
 	else
