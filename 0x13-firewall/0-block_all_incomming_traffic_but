@@ -4,9 +4,4 @@ sudo ufw allow 443
 sudo ufw allow https
 sudo ufw allow 80
 
-sudo ufw show added
-
-sudo ufw app list
-sudo ufw allow OpenSSH
-sudo ufw show added
 sudo ufw enable
