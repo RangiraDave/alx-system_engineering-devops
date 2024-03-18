@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to display the user name passed ass argument
+
+sudo -u "$1" whoami
