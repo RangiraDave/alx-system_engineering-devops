@@ -9,9 +9,9 @@ fi
 # by replacing the first occurence of the "user " with "user nginx;"
 # or if not found put it at the end of the file
 if grep -q '^user ' /etc/nginx/nginx.conf; then
-    sudo sed -i '0,/^user / s/^user .*/user nginx;/' /etc/nginx/nginx.conf
+    sed -i '0,/^user / s/^user .*/user nginx;/' /etc/nginx/nginx.conf
 else
-    sudo echo "user nginx;" >> /etc/nginx/nginx.conf
+    echo "user nginx;" >> /etc/nginx/nginx.conf
 fi
 
 # echo "user nginx;" > /etc/nginx/nginx.conf
