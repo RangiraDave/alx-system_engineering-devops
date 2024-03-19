@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # fix 1 made short
 if ! id -u nginx &>/dev/null
-	then adduser --system --no-create-home --disabled-login --group nginx
+	then sudo adduser --system --no-create-home --disabled-login --group nginx
 fi
-sed -i '0,/^user / s/^user .*/user nginx;/' /etc/nginx/nginx.conf
-systemctl restart nginx
+sudo sed -i '0,/^user / s/^user .*/user nginx;/' /etc/nginx/nginx.conf
+sudo systemctl restart nginx
