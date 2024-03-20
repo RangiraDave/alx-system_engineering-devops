@@ -3,5 +3,5 @@
 if ! id -u nginx &>/dev/null
 	then sudo adduser --system --no-create-home --disabled-login --group nginx
 fi
-sudo sed -i '0,/^user / s/^user .*/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -i '0,/^user / s/^user .*/user nginx/' /etc/nginx/nginx.conf
 sudo systemctl restart nginx
