@@ -15,5 +15,12 @@ else
 fi
 
 # echo "user nginx;" > /etc/nginx/nginx.conf
+# Ensure Nginx listens on all active IPs on port 8080
+# Update the default server block to listen on port 8080 for all IPs
+echo "server {
+    listen 8080 default_server;
+    listen [::]:8080 default_server;
+}" | sudo tee /etc/nginx/sites-available/default >> /dev/null
 
+# Restart Nginx to apply the changes
 sudo systemctl restart nginx
