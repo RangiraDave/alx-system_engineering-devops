@@ -11,7 +11,7 @@ fi
 if grep -q '^user ' /etc/nginx/nginx.conf; then
     sudo sed -i '0,/^user / s/^user .*/user nginx;/' /etc/nginx/nginx.conf
 else
-    sudo echo "user nginx;" >> /etc/nginx/nginx.conf
+    echo "user nginx;" >> /etc/nginx/nginx.conf
 fi
 
 # echo "user nginx;" > /etc/nginx/nginx.conf
