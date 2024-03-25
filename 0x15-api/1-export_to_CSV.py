@@ -30,7 +30,9 @@ def get_info(emp_id):
         data = []
         for todo in todos:
             data.append([
-                str(emp_id), str(uname), str(todo["completed"]), str(todo["title"])
+                f'"{str(emp_id)}"', f'"{str(uname)}"',
+                f'"{str(todo["completed"])}"',
+                f'"{str(todo["title"])}"'
             ])
 
         filename = f'{emp_id}.csv'
@@ -43,4 +45,3 @@ def get_info(emp_id):
 
 if __name__ == '__main__':
     get_info(argv[1])
-
