@@ -5,7 +5,7 @@ using REST API
 """
 
 import requests
-import sys.argv
+from sys import argv
 
 
 def get_info(emp_id):
