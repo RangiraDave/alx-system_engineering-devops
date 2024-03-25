@@ -4,8 +4,8 @@ Python script to print TODO info of id given as an argument
 using REST API
 """
 
-from sys import argv
 import requests
+import sys.argv
 
 
 def get_info(emp_id):
