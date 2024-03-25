@@ -30,7 +30,7 @@ def get_info(emp_id):
 
         for todo in todos:
             if todo['completed']:
-                print(f'\t{todo["title"]}')
+                print(f'\t {todo["title"]}')
     else:
         print("API error occourd!")
 
