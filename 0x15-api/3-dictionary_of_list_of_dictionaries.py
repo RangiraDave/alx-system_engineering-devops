@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Python script to print TODO information in the REST API and export all data into JSON file.
+Python script to print TODO information in the REST API
+and export all data into JSON file.
 """
 
 import json
@@ -26,8 +27,8 @@ def get_all_info_json():
         for user in users:
             user_id = user['id']
             username = user['username']
-            url_todos = f'https://jsonplaceholder.typicode.com/todos?userId={user_id}'
-            todo_info = requests.get(url_todos)
+            u = f'https://jsonplaceholder.typicode.com/todos?userId={user_id}'
+            todo_info = requests.get(u)
 
             if todo_info.status_code == 200:
                 todos = todo_info.json()
@@ -47,7 +48,7 @@ def get_all_info_json():
         with open(output_filename, 'w') as outfile:
             json.dump(all_tasks_info, outfile)
 
-        print(f'Data exported successfully to {output_filename}')
+        # print(f'Data exported successfully to {output_filename}')
     else:
         print("API error occurred!")
 
