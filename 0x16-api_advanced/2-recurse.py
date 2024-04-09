@@ -17,7 +17,12 @@ def recurse(subreddit, hot_list=[], after=None):
     params = {'after': after} if after else {}
 
     try:
-        req = requests.get(url, headers=header, params=params, allow_redirects=False)
+        req = requests.get(
+                url,
+                headers=header,
+                params=params,
+                allow_redirects=False
+                )
         req.raise_for_status()
 
         data = req.json()
