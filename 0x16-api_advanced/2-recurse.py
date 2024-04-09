@@ -28,7 +28,7 @@ def recurse(subreddit, hot_list=[], after=None):
 
             if data['data']['after'] is not None:
                 recurse(subreddit, hot_list, data['data']['after'])
-    except requests.exceptions.HTTPError:
+    except Exception:
         return None
 
     return hot_list
