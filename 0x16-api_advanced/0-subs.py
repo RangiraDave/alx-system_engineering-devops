@@ -16,7 +16,7 @@ def number_of_subscribers(subreddit):
 
         data = req.json()
         count = data['data']['subscribers']
-    except Exception: # requests.HTTPError:
+    except Exception:  # requests.HTTPError:
         count = 0
 
     return count
