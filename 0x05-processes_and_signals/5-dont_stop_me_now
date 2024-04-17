@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 # Script to kill a process in another terminal window.
-kill $(pgrep 'bash')
+file="$(pgrep '4-to_infinity_and_beyond')"
+last_pid=$(echo $file | awk '{print $NF}')
+kill -9 $last_pid
